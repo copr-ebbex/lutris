@@ -1,11 +1,11 @@
 Name:           lutris
-Version:        0.4.20
+Version:        0.4.21
 Release:        1%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
 URL:            http://%{name}.net
-Source0:        %{URL}/releases/%{name}_%{version}.tar.xz
+Source0:        %{URL}/releases/%{name}-%{version}.tar.gz
 
 BuildArch:      noarch
 
@@ -53,6 +53,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/appdata/
 
 %changelog
+* Sat Oct 20 2018 Christopher King <bunnyapocalypse@protonmail.com> - 0.4.21
+- New version
+
 * Wed Oct 10 2018 Christopher King <bunnyapocalypse@protonmail.com> - 0.4.20
 - Edit the SUSE build service spec file to be fedora specific
 
