@@ -1,5 +1,5 @@
 Name:           lutris
-Version:        0.4.21
+Version:        0.4.21.1
 Release:        1%{?dist}
 Summary:        Install and play any video game easily
 
@@ -53,6 +53,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/appdata/
 
 %changelog
+* Fri Nov 2 2018 Christopher King <bunnyapocalypse@protonmail.com> - 0.4.21.1
+- New version
+
 * Sat Oct 20 2018 Christopher King <bunnyapocalypse@protonmail.com> - 0.4.21
 - New version
 
