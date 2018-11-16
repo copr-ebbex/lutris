@@ -1,6 +1,6 @@
 Name:           lutris
 Version:        0.4.23
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -17,6 +17,7 @@ Requires:       gtk3, psmisc, xorg-x11-server-Xephyr, xorg-x11-server-utils
 Requires:       hicolor-icon-theme
 Recommends:     wine-core
 BuildRequires:  fdupes
+BuildRequires:  libappstream-glib
 
 %description
 Lutris is a gaming platform for GNU/Linux. Its goal is to make
@@ -35,6 +36,12 @@ on Linux.
 
 %install
 %py3_install
+
+mkdir -p %{buildroot}%{_datadir}/appdata
+appstream-util validate-relax --nonet %{_builddir}/%{name}-%{version}/share/appdata/%{name}.appdata.xml
+install -m 644 %{_builddir}/%{name}-%{version}/share/appdata/%{name}.appdata.xml \
+        %{buildroot}%{_datadir}/appdata/
+
 %fdupes %{buildroot}%{python3_sitelib}
 
 
@@ -49,10 +56,12 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/polkit-1/actions/*
 %{python3_sitelib}/%{name}-*.egg-info
 %{python3_sitelib}/%{name}/
-
-%{_datadir}/appdata/
+%{_datadir}/appdata/%{name}.appdata.xml
 
 %changelog
+* Thu Nov 15 2018 Christopher King <bunnyapocalypse@protonmail.com> - 0.4.23-2
+- Updating this spec to actually install the appdata file
+
 * Wed Nov 7 2018 Christopher King <bunnyapocalypse@protonmail.com> - 0.4.23
 - New version
 
