@@ -1,6 +1,6 @@
 Name:           lutris
 Version:        0.4.23
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -37,13 +37,9 @@ on Linux.
 %install
 %py3_install
 
-mkdir -p %{buildroot}%{_datadir}/appdata
 appstream-util validate-relax --nonet %{_builddir}/%{name}-%{version}/share/appdata/%{name}.appdata.xml
-install -m 644 %{_builddir}/%{name}-%{version}/share/appdata/%{name}.appdata.xml \
-        %{buildroot}%{_datadir}/appdata/
 
 %fdupes %{buildroot}%{python3_sitelib}
-
 
 desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applications/%{name}.desktop
 
@@ -56,9 +52,12 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/polkit-1/actions/*
 %{python3_sitelib}/%{name}-*.egg-info
 %{python3_sitelib}/%{name}/
-%{_datadir}/appdata/%{name}.appdata.xml
+%{_datadir}/appdata/
 
 %changelog
+* Fri Nov 16 2018 Christopher King <bunnyapocalypse@protonmail.com> - 0.4.23-3
+- Turns out that I hadn't actually made a mistake, reverting most of the changes
+
 * Thu Nov 15 2018 Christopher King <bunnyapocalypse@protonmail.com> - 0.4.23-2
 - Updating this spec to actually install the appdata file
 
