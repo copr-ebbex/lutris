@@ -1,6 +1,6 @@
 Name:           lutris
 Version:        0.4.23
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -15,6 +15,7 @@ BuildRequires:  python3-gobject, python3-wheel, python3-setuptools, python3-gobj
 Requires:       python3-evdev, python3-gobject, python3-PyYAML, cabextract
 Requires:       gtk3, psmisc, xorg-x11-server-Xephyr, xorg-x11-server-utils
 Requires:       hicolor-icon-theme
+Requires:       mesa-vulkan-drivers.i686, mesa-libGL.i686
 Recommends:     wine-core
 BuildRequires:  fdupes
 BuildRequires:  libappstream-glib
@@ -55,6 +56,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/appdata/
 
 %changelog
+* Thu Dec 20 2018 Christopher King <bunnyapocalypse@protonmail.com> - 0.4.23-4
+- Adding some mesa depends to make Lutris work on more systems more reliably
+
 * Fri Nov 16 2018 Christopher King <bunnyapocalypse@protonmail.com> - 0.4.23-3
 - Turns out that I hadn't actually made a mistake, reverting most of the changes
 
