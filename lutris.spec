@@ -1,7 +1,8 @@
+%{?python_enable_dependency_generator}
 %define debug_package %{nil}
 Name:           lutris
 Version:        0.4.23
-Release:        7%{?dist}
+Release:        8%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -11,7 +12,7 @@ Source0:        %{URL}/releases/%{name}-%{version}.tar.gz
 BuildRequires:  desktop-file-utils
 BuildRequires:  python3-devel
 BuildRequires:  python3-gobject, python3-wheel, python3-setuptools, python3-gobject
-Requires:       python3-evdev, python3-gobject, python3-PyYAML, cabextract
+Requires:       cabextract
 Requires:       gtk3, psmisc, xorg-x11-server-Xephyr, xorg-x11-server-utils
 Requires:       hicolor-icon-theme
 
@@ -64,6 +65,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/appdata/
 
 %changelog
+* Sun Dec 30 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.4.23-5
+- Enable python dependency generator
+
 * Sun Dec 30 2018 Christopher King <bunnyapocalypse@protonmail.com> - 0.4.23-7
 - Forgot 64 bit mesa-dri drivers
 
