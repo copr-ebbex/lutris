@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
 Version:        0.4.23
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -22,6 +22,7 @@ Requires:       vulkan-loader(x86-32)
 %endif
 
 Requires:       mesa-vulkan-drivers
+Requires:       mesa-dri-drivers
 Requires:       vulkan-loader
 Recommends:     wine-core
 BuildRequires:  fdupes
@@ -63,6 +64,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/appdata/
 
 %changelog
+* Sun Dec 30 2018 Christopher King <bunnyapocalypse@protonmail.com> - 0.4.23-7
+- Forgot 64 bit mesa-dri drivers
+
 * Sun Dec 30 2018 Christopher King <bunnyapocalypse@protonmail.com> - 0.4.23-6
 - Changing depends again, specifying arches
 
