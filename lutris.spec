@@ -1,13 +1,12 @@
+%define debug_package %{nil}
 Name:           lutris
 Version:        0.4.23
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
 URL:            http://%{name}.net
 Source0:        %{URL}/releases/%{name}-%{version}.tar.gz
-
-BuildArch:      noarch
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  python3-devel
@@ -15,12 +14,15 @@ BuildRequires:  python3-gobject, python3-wheel, python3-setuptools, python3-gobj
 Requires:       python3-evdev, python3-gobject, python3-PyYAML, cabextract
 Requires:       gtk3, psmisc, xorg-x11-server-Xephyr, xorg-x11-server-utils
 Requires:       hicolor-icon-theme
-Requires:       mesa-dri-drivers
-Requires:       mesa-dri-drivers%{?_isa}
+
+%ifarch x86_64
+Requires:       mesa-dri-drivers(x86-32)
+Requires:       mesa-vulkan-drivers(x86-32)
+Requires:       vulkan-loader(x86-32)
+%endif
+
 Requires:       mesa-vulkan-drivers
-Requires:       mesa-vulkan-drivers%{?_isa}
 Requires:       vulkan-loader
-Requires:       vulkan-loader%{?_isa}
 Recommends:     wine-core
 BuildRequires:  fdupes
 BuildRequires:  libappstream-glib
@@ -61,6 +63,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/appdata/
 
 %changelog
+* Sun Dec 30 2018 Christopher King <bunnyapocalypse@protonmail.com> - 0.4.23-6
+- Changing depends again, specifying arches
+
 * Fri Dec 28 2018 Christopher King <bunnyapocalypse@protonmail.com> - 0.4.23-5
 - Changing the format of those previously added dependencies so that they work
 
