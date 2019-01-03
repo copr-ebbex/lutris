@@ -1,4 +1,3 @@
-%{?python_enable_dependency_generator}
 %define debug_package %{nil}
 Name:           lutris
 Version:        0.4.23
@@ -12,7 +11,7 @@ Source0:        %{URL}/releases/%{name}-%{version}.tar.gz
 BuildRequires:  desktop-file-utils
 BuildRequires:  python3-devel
 BuildRequires:  python3-gobject, python3-wheel, python3-setuptools, python3-gobject
-Requires:       cabextract
+Requires:       python3-evdev, python3-gobject, python3-PyYAML, cabextract
 Requires:       gtk3, psmisc, xorg-x11-server-Xephyr, xorg-x11-server-utils
 Requires:       hicolor-icon-theme
 
@@ -67,11 +66,8 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/appdata/
 
 %changelog
-* Thu Jan 4  2019 Christopher King <bunnyapocalypse@protonmail.com> - 0.4.23-8
-- Forgot mesa-libGL
-
-* Sun Dec 30 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.4.23-5
-- Enable python dependency generator
+* Thu Jan 3 2019 Christopher King <bunnyapocalypse@protonmail.com> - 0.4.23-8
+- Forgot mesa-libGL drivers
 
 * Sun Dec 30 2018 Christopher King <bunnyapocalypse@protonmail.com> - 0.4.23-7
 - Forgot 64 bit mesa-dri drivers
