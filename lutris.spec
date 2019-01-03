@@ -20,11 +20,13 @@ Requires:       hicolor-icon-theme
 Requires:       mesa-dri-drivers(x86-32)
 Requires:       mesa-vulkan-drivers(x86-32)
 Requires:       vulkan-loader(x86-32)
+Requires:       mesa-libGL(x86-32)
 %endif
 
 Requires:       mesa-vulkan-drivers
 Requires:       mesa-dri-drivers
 Requires:       vulkan-loader
+Requires:       mesa-libGL
 Recommends:     wine-core
 BuildRequires:  fdupes
 BuildRequires:  libappstream-glib
@@ -65,6 +67,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/appdata/
 
 %changelog
+* Thu Jan 4  2019 Christopher King <bunnyapocalypse@protonmail.com> - 0.4.23-8
+- Forgot mesa-libGL
+
 * Sun Dec 30 2018 Igor Gnatenko <ignatenkobrain@fedoraproject.org> - 0.4.23-5
 - Enable python dependency generator
 
