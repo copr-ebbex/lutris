@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
 Version:        0.4.23
-Release:        8%{?dist}
+Release:        9%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -66,6 +66,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/appdata/
 
 %changelog
+* Fri Feb 01 2019 Fedora Release Engineering <releng@fedoraproject.org> - 0.4.23-9
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
+
 * Thu Jan 3 2019 Christopher King <bunnyapocalypse@protonmail.com> - 0.4.23-8
 - Forgot mesa-libGL drivers
 
