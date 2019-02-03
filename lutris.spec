@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
-Version:        0.4.23
-Release:        9%{?dist}
+Version:        0.5.0.1
+Release:        1%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -48,17 +48,22 @@ on Linux.
 %install
 %py3_install
 
-appstream-util validate-relax --nonet %{_builddir}/%{name}-%{version}/share/appdata/%{name}.appdata.xml
+appstream-util validate-relax --nonet %{_builddir}/%{name}-%{version}/share/appdata/net.%{name}.Lutris.appdata.xml
 
 %fdupes %{buildroot}%{python3_sitelib}
 
-desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applications/%{name}.desktop
+desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applications/net.%{name}.Lutris.desktop
 
 %files
 %{_bindir}/%{name}
+%{_bindir}/%{name}-wrapper
 %{_datadir}/%{name}/
-%{_datadir}/applications/%{name}.desktop
+%{_datadir}/applications/net.%{name}.Lutris.desktop
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
+%{_datadir}/icons/hicolor/16x16/apps/%{name}.png
+%{_datadir}/icons/hicolor/22x22/apps/%{name}.png
+%{_datadir}/icons/hicolor/24x24/apps/%{name}.png
+%{_datadir}/icons/hicolor/32x32/apps/%{name}.png
 %{_datadir}/icons/hicolor/48x48/apps/%{name}.png
 %{_datadir}/polkit-1/actions/*
 %{python3_sitelib}/%{name}-*.egg-info
@@ -66,6 +71,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/appdata/
 
 %changelog
+* Sun Feb 3 2019 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.0.1-1
+- Updating version
+
 * Fri Feb 01 2019 Fedora Release Engineering <releng@fedoraproject.org> - 0.4.23-9
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_30_Mass_Rebuild
 
