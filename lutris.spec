@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
 Version:        0.5.0.1
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -14,6 +14,7 @@ BuildRequires:  python3-gobject, python3-wheel, python3-setuptools, python3-gobj
 Requires:       python3-evdev, python3-gobject, python3-PyYAML, cabextract
 Requires:       gtk3, psmisc, xorg-x11-server-Xephyr, xorg-x11-server-utils
 Requires:       hicolor-icon-theme
+Requires:       gnome-desktop3
 
 %ifarch x86_64
 Requires:       mesa-dri-drivers(x86-32)
