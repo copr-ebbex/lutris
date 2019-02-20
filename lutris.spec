@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
 Version:        0.5.0.1
-Release:        3%{?dist}
+Release:        5%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -29,6 +29,7 @@ Requires:       vulkan-loader
 Requires:       mesa-libGL
 Requires:       python3-requests
 Requires:       python3-pillow
+Requires:       webkit2gtk3
 Recommends:     wine-core
 BuildRequires:  fdupes
 BuildRequires:  libappstream-glib
@@ -50,7 +51,6 @@ on Linux.
 
 %install
 %py3_install
-
 appstream-util validate-relax --nonet %{_builddir}/%{name}-%{version}/share/appdata/net.%{name}.Lutris.appdata.xml
 
 %fdupes %{buildroot}%{python3_sitelib}
@@ -74,6 +74,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/appdata/
 
 %changelog
+* Tue Feb 19 2019 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.0.1-5
+- More additional depends
+
 * Sun Feb 3 2019 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.0.1-2
 - Forgot to add additional depends
 
