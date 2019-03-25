@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
-Version:        0.5.0.1
-Release:        5%{?dist}
+Version:        0.5.1
+Release:        1%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -51,7 +51,7 @@ on Linux.
 
 %install
 %py3_install
-appstream-util validate-relax --nonet %{_builddir}/%{name}-%{version}/share/appdata/net.%{name}.Lutris.appdata.xml
+appstream-util validate-relax --nonet %{_builddir}/%{name}-%{version}/share/metainfo/net.%{name}.Lutris.appdata.xml
 
 %fdupes %{buildroot}%{python3_sitelib}
 
@@ -71,9 +71,12 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/polkit-1/actions/*
 %{python3_sitelib}/%{name}-*.egg-info
 %{python3_sitelib}/%{name}/
-%{_datadir}/appdata/
+%{_datadir}/metainfo/
 
 %changelog
+* Sun Feb 24 2019 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.1-1
+- New version
+
 * Tue Feb 19 2019 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.0.1-5
 - More additional depends
 
