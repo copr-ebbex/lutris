@@ -1,6 +1,6 @@
 %define debug_package %{nil}
 Name:           lutris
-Version:        0.5.1
+Version:        0.5.1.1
 Release:        1%{?dist}
 Summary:        Install and play any video game easily
 
@@ -29,6 +29,8 @@ Requires:       vulkan-loader
 Requires:       mesa-libGL
 Requires:       python3-requests
 Requires:       python3-pillow
+Requires:       glx-utils
+Requires:       gvfs
 Requires:       webkit2gtk3
 Recommends:     wine-core
 BuildRequires:  fdupes
@@ -74,6 +76,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
+* Mon Feb 25 2019 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.1.1-1
+- New version
+
 * Sun Feb 24 2019 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.1-1
 - New version
 
