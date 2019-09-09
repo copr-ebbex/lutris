@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
-Version:        0.5.2.1
-Release:        3%{?dist}
+Version:        0.5.3
+Release:        1%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -76,6 +76,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
+* Sun Sep 8 2019 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.3-1
+- New Version
+
 * Mon Aug 19 2019 Miro Hrončok <mhroncok@redhat.com> - 0.5.2.1-3
 - Rebuilt for Python 3.8
 
