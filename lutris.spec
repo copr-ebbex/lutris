@@ -1,6 +1,6 @@
 %define debug_package %{nil}
 Name:           lutris
-Version:        0.5.3
+Version:        0.5.4
 Release:        1%{?dist}
 Summary:        Install and play any video game easily
 
@@ -44,7 +44,7 @@ do is play the game. It aims to support every game that is playable
 on Linux.
 
 %prep
-%setup -q -n %{name}-%{version}
+%autosetup -n %{name}
 
 
 %build
@@ -53,7 +53,7 @@ on Linux.
 
 %install
 %py3_install
-appstream-util validate-relax --nonet %{_builddir}/%{name}-%{version}/share/metainfo/net.%{name}.Lutris.appdata.xml
+appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/net.%{name}.Lutris.metainfo.xml
 
 %fdupes %{buildroot}%{python3_sitelib}
 
@@ -76,6 +76,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
+* Sun Jan 26 2020 Tomas Tomecek <ttomecek@redhat.com> - 0.5.4-1
+- new upstream release: 0.5.4
+
 * Sun Sep 8 2019 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.3-1
 - New Version
 
