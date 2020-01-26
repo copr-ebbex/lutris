@@ -6,7 +6,7 @@ Summary:        Install and play any video game easily
 
 License:        GPLv3
 URL:            http://%{name}.net
-Source0:        %{URL}/releases/%{name}-%{version}.tar.gz
+Source0:        %{URL}/releases/%{name}_%{version}.tar.xz
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  python3-devel
