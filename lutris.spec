@@ -6,7 +6,7 @@ Summary:        Install and play any video game easily
 
 License:        GPLv3
 URL:            http://%{name}.net
-Source0:        %{URL}/releases/%{name}_%{version}.tar.xz
+Source0:        %{URL}/releases/%{name}_%{version}.tar.gz
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  python3-devel
@@ -44,7 +44,7 @@ do is play the game. It aims to support every game that is playable
 on Linux.
 
 %prep
-%autosetup -n %{name}
+%autosetup -n %{name}-%{version}
 
 
 %build
