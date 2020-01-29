@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
 Version:        0.5.4
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -76,6 +76,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
+* Wed Jan 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.5.4-2
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
+
 * Sun Jan 26 2020 Tomas Tomecek <ttomecek@redhat.com> - 0.5.4-1
 - new upstream release: 0.5.4
 
