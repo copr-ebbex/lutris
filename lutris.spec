@@ -1,12 +1,16 @@
 %define debug_package %{nil}
 Name:           lutris
 Version:        0.5.4
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
 URL:            http://%{name}.net
 Source0:        %{URL}/releases/%{name}_%{version}.tar.gz
+
+# Make Lutris Run Again
+# * https://github.com/julianschacher/net.lutris.Lutris/commit/566cf2ba1cca9d64c828a5cb8952174aaad6ce66
+Patch0:         make-lutris-run-again.patch
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  python3-devel
@@ -44,7 +48,7 @@ do is play the game. It aims to support every game that is playable
 on Linux.
 
 %prep
-%autosetup -n %{name}-%{version}
+%autosetup -n %{name}-%{version} -p1
 
 
 %build
@@ -76,6 +80,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
+* Fri Mar 13 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 0.5.4-3
+- Backport upstream patch. Fix #1806132
+
 * Wed Jan 29 2020 Fedora Release Engineering <releng@fedoraproject.org> - 0.5.4-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_32_Mass_Rebuild
 
