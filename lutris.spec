@@ -1,16 +1,12 @@
 %define debug_package %{nil}
 Name:           lutris
-Version:        0.5.4
-Release:        3%{?dist}
+Version:        0.5.5
+Release:        2%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
 URL:            http://%{name}.net
 Source0:        %{URL}/releases/%{name}_%{version}.tar.gz
-
-# Make Lutris Run Again
-# * https://github.com/julianschacher/net.lutris.Lutris/commit/566cf2ba1cca9d64c828a5cb8952174aaad6ce66
-Patch0:         make-lutris-run-again.patch
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  python3-devel
@@ -65,7 +61,6 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 
 %files
 %{_bindir}/%{name}
-%{_bindir}/%{name}-wrapper
 %{_datadir}/%{name}/
 %{_datadir}/applications/net.%{name}.Lutris.desktop
 %{_datadir}/icons/hicolor/scalable/apps/%{name}.svg
@@ -74,12 +69,17 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/icons/hicolor/24x24/apps/%{name}.png
 %{_datadir}/icons/hicolor/32x32/apps/%{name}.png
 %{_datadir}/icons/hicolor/48x48/apps/%{name}.png
-%{_datadir}/polkit-1/actions/*
 %{python3_sitelib}/%{name}-*.egg-info
 %{python3_sitelib}/%{name}/
 %{_datadir}/metainfo/
 
 %changelog
+* Sun Apr 05 2020 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.5-2
+- Removed unecessary comments 
+
+* Sun Apr 05 2020 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.5-1
+- New Version
+
 * Fri Mar 13 2020 Artem Polishchuk <ego.cordatus@gmail.com> - 0.5.4-3
 - Backport upstream patch. Fix #1806132
 
