@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
-Version:        0.5.6
-Release:        2%{?dist}
+Version:        0.5.7
+Release:        1%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -71,11 +71,15 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/icons/hicolor/48x48/apps/%{name}.png
 %{_datadir}/icons/hicolor/64x64/apps/%{name}.png
 %{_datadir}/icons/hicolor/128x128/apps/%{name}.png
+%{_datadir}/man/%{name}.1
 %{python3_sitelib}/%{name}-*.egg-info
 %{python3_sitelib}/%{name}/
 %{_datadir}/metainfo/
 
 %changelog
+* Sun Jul 5 2020 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.7-1
+- New Version
+
 * Tue May 26 2020 Miro Hrončok <mhroncok@redhat.com> - 0.5.6-2
 - Rebuilt for Python 3.9
 
