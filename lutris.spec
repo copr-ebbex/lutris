@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
-Version:        0.5.7.1
-Release:        3%{?dist}
+Version:        0.5.8
+Release:        1%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -71,12 +71,15 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/icons/hicolor/48x48/apps/%{name}.png
 %{_datadir}/icons/hicolor/64x64/apps/%{name}.png
 %{_datadir}/icons/hicolor/128x128/apps/%{name}.png
-%{_datadir}/man/%{name}.1
+%{_datadir}/man/man1/%{name}.1.gz
 %{python3_sitelib}/%{name}-*.egg-info
 %{python3_sitelib}/%{name}/
 %{_datadir}/metainfo/
 
 %changelog
+* Wed Nov 18 2020 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.8-1
+- New Version
+
 * Tue Jul 28 2020 Adam Jackson <ajax@redhat.com> - 0.5.7.1-3
 - Require xrandr not xorg-x11-server-utils
 
