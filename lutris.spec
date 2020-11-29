@@ -1,6 +1,6 @@
 %define debug_package %{nil}
 Name:           lutris
-Version:        0.5.8
+Version:        0.5.8.1
 Release:        1%{?dist}
 Summary:        Install and play any video game easily
 
@@ -77,6 +77,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
+* Sun Nov 29 2020 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.8.1-1
+- New Version
+
 * Wed Nov 18 2020 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.8-1
 - New Version
 
