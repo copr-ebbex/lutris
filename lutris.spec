@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
 Version:        0.5.8.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -36,6 +36,8 @@ Recommends:     wine-core
 BuildRequires:  fdupes
 BuildRequires:  libappstream-glib
 
+#remove dependency on python-magic as it causes problems atm
+Patch0:         removing-python-magic-dep.patch
 %description
 Lutris is a gaming platform for GNU/Linux. Its goal is to make
 gaming on Linux as easy as possible by taking care of installing
@@ -77,6 +79,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
+* Sun Nov 29 2020 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.8.1-2
+- Patch to remove python-magic as a requirement to fix some issues
+
 * Sun Nov 29 2020 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.8.1-1
 - New Version
 
