@@ -80,7 +80,7 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
-* Thu Jan 23 2021 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.8.3-1
+* Sat Jan 23 2021 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.8.3-1
 - New Version
 
 * Tue Jan 05 2021 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.8.2-1
