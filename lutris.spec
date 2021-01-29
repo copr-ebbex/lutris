@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
 Version:        0.5.8.3
-Release:        2%{?dist}
+Release:        3%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -32,6 +32,7 @@ Requires:       python3-pillow
 Requires:       glx-utils
 Requires:       gvfs
 Requires:       webkit2gtk3
+Requires:       python3-lxml
 Recommends:     wine-core
 BuildRequires:  fdupes
 BuildRequires:  libappstream-glib
@@ -80,6 +81,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
+* Thu Jan 28 2021 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.8.3-3
+- Adding python3-lmxl dependency
+ 
 * Tue Jan 26 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.5.8.3-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
