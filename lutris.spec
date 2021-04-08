@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
 Version:        0.5.8.3
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -11,7 +11,7 @@ Source0:        %{URL}/releases/%{name}_%{version}.tar.gz
 BuildRequires:  desktop-file-utils
 BuildRequires:  python3-devel
 BuildRequires:  python3-gobject, python3-wheel, python3-setuptools, python3-gobject
-Requires:       python3-evdev, python3-gobject, python3-PyYAML, cabextract
+Requires:       python3-dbus, python3-evdev, python3-gobject, python3-PyYAML, cabextract
 Requires:       gtk3, psmisc, xorg-x11-server-Xephyr, xrandr
 Requires:       hicolor-icon-theme
 Requires:       gnome-desktop3
@@ -81,6 +81,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
+* Thu Apr  8 2021 Anders Lind <smitna@gmail.com> - 0.5.8.3-4
+- Adding python3-dbus dependency
+
 * Thu Jan 28 2021 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.8.3-3
 - Adding python3-lmxl dependency
  
