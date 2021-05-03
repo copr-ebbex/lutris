@@ -21,6 +21,7 @@ Requires:       mesa-dri-drivers(x86-32)
 Requires:       mesa-vulkan-drivers(x86-32)
 Requires:       vulkan-loader(x86-32)
 Requires:       mesa-libGL(x86-32)
+Recommends:     wine-core(x86-32)
 %endif
 
 Requires:       mesa-vulkan-drivers
@@ -81,6 +82,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
+* Mon May  3 2021 Daniel Rusek <mail@asciiwolf.com> - 0.5.8.3-5
+- Adding 32-bit wine-core weak dependency
+
 * Thu Apr  8 2021 Anders Lind <smitna@gmail.com> - 0.5.8.3-4
 - Adding python3-dbus dependency
 
