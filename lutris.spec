@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
 Version:        0.5.8.3
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
