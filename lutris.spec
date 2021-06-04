@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
 Version:        0.5.8.3
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -82,6 +82,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
+* Fri Jun 04 2021 Python Maint <python-maint@redhat.com> - 0.5.8.3-6
+- Rebuilt for Python 3.10
+
 * Mon May  3 2021 Daniel Rusek <mail@asciiwolf.com> - 0.5.8.3-5
 - Adding 32-bit wine-core weak dependency
 
