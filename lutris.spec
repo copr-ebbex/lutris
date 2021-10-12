@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
-Version:        0.5.8.3
-Release:        7%{?dist}
+Version:        0.5.9
+Release:        1%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -82,6 +82,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
+* Tue Oct 12 2021 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.9-1
+- New version
+
 * Thu Jul 22 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.5.8.3-7
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_35_Mass_Rebuild
 
