@@ -1,12 +1,10 @@
---- lutris-0.5.8.4/setup.py	2021-07-03 05:14:09.000000000 +0200
-+++ setup.py	2021-10-15 10:01:19.021000000 +0200
-@@ -53,8 +53,7 @@
-         'PyYAML',
+--- lutris-0.5.9.1/setup.py	2021-10-17 03:14:23.000000000 +0200
++++ setup.py	2021-10-17 17:44:56.515000000 +0200
+@@ -55,7 +55,6 @@
          'PyGObject',
          'evdev',
--        'requests',
+         'requests',
 -        'python-magic'
-+        'requests'
      ],
-     extras_require={
-         'Discord': ['pypresence~=3.3.2']
+     url='https://lutris.net',
+     description='Video game preservation platform',
