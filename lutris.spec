@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
 Version:        0.5.9.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -21,6 +21,7 @@ Requires:       mesa-dri-drivers(x86-32)
 Requires:       mesa-vulkan-drivers(x86-32)
 Requires:       vulkan-loader(x86-32)
 Requires:       mesa-libGL(x86-32)
+Recommends:     pipewire(x86-32)
 Recommends:     wine-core(x86-32)
 %endif
 
@@ -82,6 +83,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
+* Wed Oct 20 2021 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.9.1-2
+- Add 32 bit pipewire as requirement
+ 
 * Sun Oct 17 2021 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.9.1-1
 - New version
  
