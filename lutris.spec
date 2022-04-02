@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
-Version:        0.5.9.1
-Release:        3%{?dist}
+Version:        0.5.10
+Release:        1%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -15,6 +15,7 @@ Requires:       python3-dbus, python3-evdev, python3-gobject, python3-PyYAML, ca
 Requires:       gtk3, psmisc, xorg-x11-server-Xephyr, xrandr
 Requires:       hicolor-icon-theme
 Requires:       gnome-desktop3
+Requires:       python3-distro
 
 %ifarch x86_64
 Requires:       mesa-dri-drivers(x86-32)
@@ -22,6 +23,7 @@ Requires:       mesa-vulkan-drivers(x86-32)
 Requires:       vulkan-loader(x86-32)
 Requires:       mesa-libGL(x86-32)
 Recommends:     pipewire(x86-32)
+Recommends:     wine-pulseaudio(x86-32)
 Recommends:     wine-core(x86-32)
 %endif
 
@@ -40,7 +42,7 @@ BuildRequires:  fdupes
 BuildRequires:  libappstream-glib
 
 #remove dependency on python-magic as it causes problems atm
-Patch0:         removing-python-magic-dep.patch
+#Patch0:         removing-python-magic-dep.patch
 
 %description
 Lutris is a gaming platform for GNU/Linux. Its goal is to make
@@ -83,8 +85,30 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
-* Thu Jan 20 2022 Fedora Release Engineering <releng@fedoraproject.org> - 0.5.9.1-3
-- Rebuilt for https://fedoraproject.org/wiki/Fedora_36_Mass_Rebuild
+
+* Fri Apr 01 2022 Steve Cossette <farchord@gmail.com> - 0.5.10-1
+- Initial release of version 0.5.10. Changelog:
+- Add new window to add games to Lutris, with searches from the website, scanning a folder for previously installed games, installing a Windows game from a setup file, installing from a YAML script or configuring a single game manually.
+- Move the search for Lutris installers from a tab in the Lutris service to the window for adding games.
+- Add option to add a Lutris game to Steam
+- Add a coverart format
+- Add integration with EA Origin
+- Add integration with Ubisoft Connect
+- Download missing media on startup
+- Remove Winesteam runner (install Steam for Windows in Lutris instead)
+- PC (Linux and Windows) games have their own dedicated Nvidia shader cache
+- Add dgvoodoo2 option
+- Add option to enable BattleEye anti-cheat support
+- Default to Retroarch cores in ~/.config/retroarch/cores if available
+- Add support for downloading patches and DLC for GOG games
+- Add --export and --import command line flags to export a game a lutris game and re-import it (requires --dest for the destination path, feature still experimental)
+- Add command line flags to manage runners: --install-runner, --uninstall-runners, --list-runners, --list-wine-versions
+- Change behavior of the "Stop" button, remove "Kill all Wine processes" action
+- Gamescope option is now disabled on Nvidia GPUs
+- Enable F-Sync by default
+
+* Thu Nov 04 2021 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.9.1-3
+- Add 32 bit wine pulseaudio support 
 
 * Wed Oct 20 2021 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.9.1-2
 - Add 32 bit pipewire as requirement
