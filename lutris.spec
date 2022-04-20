@@ -1,6 +1,6 @@
 %define debug_package %{nil}
 Name:           lutris
-Version:        0.5.10
+Version:        0.5.10.1
 Release:        1%{?dist}
 Summary:        Install and play any video game easily
 
@@ -40,9 +40,6 @@ Requires:       python3-lxml
 Recommends:     wine-core
 BuildRequires:  fdupes
 BuildRequires:  libappstream-glib
-
-#remove dependency on python-magic as it causes problems atm
-#Patch0:         removing-python-magic-dep.patch
 
 %description
 Lutris is a gaming platform for GNU/Linux. Its goal is to make
@@ -86,6 +83,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 
 %changelog
 
+* Wed Apr 20 2022 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.10.1-1
+- small realease with QOL changes
+
 * Fri Apr 01 2022 Steve Cossette <farchord@gmail.com> - 0.5.10-1
 - Initial release of version 0.5.10. Changelog:
 - Add new window to add games to Lutris, with searches from the website, scanning a folder for previously installed games, installing a Windows game from a setup file, installing from a YAML script or configuring a single game manually.
@@ -108,17 +108,17 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 - Enable F-Sync by default
 
 * Thu Nov 04 2021 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.9.1-3
-- Add 32 bit wine pulseaudio support 
+- Add 32 bit wine pulseaudio support
 
 * Wed Oct 20 2021 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.9.1-2
 - Add 32 bit pipewire as requirement
- 
+
 * Sun Oct 17 2021 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.9.1-1
 - New version
- 
+
 * Fri Oct 15 2021 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.8.4-2
 - Revert 0.5.9 on advice of Lutris devs
- 
+
 * Tue Oct 12 2021 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.9-1
 - New version
 
@@ -136,7 +136,7 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 
 * Thu Jan 28 2021 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.8.3-3
 - Adding python3-lmxl dependency
- 
+
 * Tue Jan 26 2021 Fedora Release Engineering <releng@fedoraproject.org> - 0.5.8.3-2
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_34_Mass_Rebuild
 
@@ -145,7 +145,7 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 
 * Tue Jan 05 2021 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.8.2-1
 - New version
- 
+
 * Sun Nov 29 2020 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.8.1-2
 - Patch to remove python-magic as a requirement to fix some issues
 
@@ -174,7 +174,7 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 - New Version
 
 * Sun Apr 05 2020 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.5-2
-- Removed unecessary comments 
+- Removed unecessary comments
 
 * Sun Apr 05 2020 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.5-1
 - New Version
