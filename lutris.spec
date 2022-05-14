@@ -22,6 +22,7 @@ Requires:       mesa-dri-drivers(x86-32)
 Requires:       mesa-vulkan-drivers(x86-32)
 Requires:       vulkan-loader(x86-32)
 Requires:       mesa-libGL(x86-32)
+Recommends:     libFAudio(x86-32)
 Recommends:     pipewire(x86-32)
 Recommends:     wine-pulseaudio(x86-32)
 Recommends:     wine-core(x86-32)
@@ -37,6 +38,7 @@ Requires:       glx-utils
 Requires:       gvfs
 Requires:       webkit2gtk3
 Requires:       python3-lxml
+Recommends:     libFAudio
 Recommends:     wine-core
 BuildRequires:  fdupes
 BuildRequires:  libappstream-glib
