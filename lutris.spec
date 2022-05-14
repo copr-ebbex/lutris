@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
 Version:        0.5.10.1
-Release:        1%{?dist}
+Release:        2%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -84,6 +84,8 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
+* Sat May 14 2022 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.10.1-2
+- Add missing depend
 
 * Wed Apr 20 2022 Christopher King <bunnyapocalypse@protonmail.com> - 0.5.10.1-1
 - small realease with QOL changes
