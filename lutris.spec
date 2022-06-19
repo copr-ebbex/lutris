@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
 Version:        0.5.10.1
-Release:        3%{?dist}
+Release:        4%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -40,6 +40,7 @@ Requires:       webkit2gtk3
 Requires:       python3-lxml
 Recommends:     libFAudio
 Recommends:     wine-core
+Recommends:	p7zip-plugins
 BuildRequires:  fdupes
 BuildRequires:  libappstream-glib
 
@@ -84,6 +85,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
+* Sun Jun 19 2022 Steve Cossette <farchord@gmail.com> - 0.5.10.1-4
+- Added Recommended package 'p7zip-plugins' (For some game installers requiring it)
+
 * Mon Jun 13 2022 Python Maint <python-maint@redhat.com> - 0.5.10.1-3
 - Rebuilt for Python 3.11
 
