@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
 Version:        0.5.10.1
-Release:        4%{?dist}
+Release:        5%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -85,6 +85,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
+* Mon Jun 20 2022 Python Maint <python-maint@redhat.com> - 0.5.10.1-5
+- Rebuilt for Python 3.11
+
 * Sun Jun 19 2022 Steve Cossette <farchord@gmail.com> - 0.5.10.1-4
 - Added Recommended package 'p7zip-plugins' (For some game installers requiring it)
 
