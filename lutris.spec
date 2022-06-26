@@ -38,7 +38,7 @@ Requires:       glx-utils
 Requires:       gvfs
 Requires:       webkit2gtk3
 Requires:       python3-lxml
-Requires:	gamemode
+Recommends:	gamemode
 Recommends:     libFAudio
 Recommends:     wine-core
 Recommends:	p7zip-plugins
