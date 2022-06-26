@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
 Version:        0.5.10.1
-Release:        5%{?dist}
+Release:        6%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -38,6 +38,7 @@ Requires:       glx-utils
 Requires:       gvfs
 Requires:       webkit2gtk3
 Requires:       python3-lxml
+Requires:	gamemode
 Recommends:     libFAudio
 Recommends:     wine-core
 Recommends:	p7zip-plugins
