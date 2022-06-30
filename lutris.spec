@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
 Version:        0.5.10.1
-Release:        6%{?dist}
+Release:        7%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -38,6 +38,8 @@ Requires:       glx-utils
 Requires:       gvfs
 Requires:       webkit2gtk3
 Requires:       python3-lxml
+Recommends: 	p7zip, curl
+Recommends:	fluid-soundfont-gs
 Recommends:	gamemode
 Recommends:     libFAudio
 Recommends:     wine-core
@@ -86,6 +88,10 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
+* Wed Jun 29 2022 Steve Cossette <farchord@gmail.com> - 0.5.10.1-7
+- Added some missing GUI package recommended packages:
+- Recommendations: p7zip, curl, fluid-soundfont-gs (For MIDI playback -- other soundfonts can be substituted)
+
 * Mon Jun 20 2022 Python Maint <python-maint@redhat.com> - 0.5.10.1-5
 - Rebuilt for Python 3.11
 
