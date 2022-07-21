@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
 Version:        0.5.10.1
-Release:        7%{?dist}
+Release:        8%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -88,6 +88,9 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
+* Thu Jul 21 2022 Fedora Release Engineering <releng@fedoraproject.org> - 0.5.10.1-8
+- Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild
+
 * Wed Jun 29 2022 Steve Cossette <farchord@gmail.com> - 0.5.10.1-7
 - Added some missing GUI package recommended packages:
 - Recommendations: p7zip, curl, fluid-soundfont-gs (For MIDI playback -- other soundfonts can be substituted)
