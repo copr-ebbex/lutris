@@ -1,7 +1,7 @@
 %define debug_package %{nil}
 Name:           lutris
-Version:        0.5.10.1
-Release:        8%{?dist}
+Version:        0.5.11
+Release:        1%{?dist}
 Summary:        Install and play any video game easily
 
 License:        GPLv3
@@ -88,6 +88,23 @@ desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applicatio
 %{_datadir}/metainfo/
 
 %changelog
+* Thu Aug 25 2022 Steve Cossette <farchord@gmail.com> - 0.5.11-1
+- Update to 0.5.11:
+- Fix for some installers commands exiting with return code 256
+- Change shortcut for show/hide installed games to Ctrl + i
+- Show/hide hidden games is assigned to Ctrl + h
+- Install game launcher before login for services that use one.
+- Add Amazon Games integration
+- Added SheepShaver, BasiliskII and Mini vMac runners
+- Don't perform runtime updates when a game is launched via a shortcut
+- Support variables in script URLs
+- Fix crash when Lutris is unable to read the screen resolution
+- Enable Gamescope on Nvidia >= 515
+- Fixes for Steam shortcuts
+- Add Gnome Console and Deepin Terminal to supported terminal emulators
+- Fix crash when Mangohud is used alongside Gamescope
+- Translation updates
+
 * Thu Jul 21 2022 Fedora Release Engineering <releng@fedoraproject.org> - 0.5.10.1-8
 - Rebuilt for https://fedoraproject.org/wiki/Fedora_37_Mass_Rebuild
 
