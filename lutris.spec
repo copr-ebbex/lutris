@@ -1,14 +1,12 @@
 %define debug_package %{nil}
 Name:           lutris
-Version:        0.5.13
+Version:        0.5.14
 Release:        %autorelease
 Summary:        Install and play any video game easily
 
 License:        GPLv3
 URL:            http://%{name}.net
 Source0:        https://github.com/%{name}/%{name}/archive/refs/tags/v%{version}.tar.gz
-# A bug in 0.5.13 would cause users of lutris using old obsoleted runners to no longer be able to start the app.
-Patch0:         handle-obsolete-runners.patch
 
 BuildRequires:  desktop-file-utils
 BuildRequires:  python3-devel
@@ -69,11 +67,8 @@ on Linux.
 %install
 %py3_install
 %meson_install
-
 appstream-util validate-relax --nonet %{buildroot}/%{_datadir}/metainfo/net.%{name}.Lutris.metainfo.xml
-
 %fdupes %{buildroot}%{python3_sitelib}
-
 desktop-file-install --dir=%{buildroot}%{_datadir}/applications share/applications/net.%{name}.Lutris.desktop
 
 %files
