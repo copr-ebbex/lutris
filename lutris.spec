@@ -15,6 +15,8 @@ Requires:       gtk3, psmisc, xorg-x11-server-Xephyr, xrandr
 Requires:       hicolor-icon-theme
 Requires:       gnome-desktop3
 Requires:       python3-distro
+Requires:       python3-cairo
+
 # Tests
 BuildRequires:  python3dist(pytest)
 BuildRequires:  gtk3-devel
