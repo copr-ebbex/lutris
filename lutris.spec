@@ -4,7 +4,8 @@ Version:        0.5.17
 Release:        %autorelease
 Summary:        Install and play any video game easily
 
-License:        GPLv3
+# Automatically converted from old format: GPLv3 - review is highly recommended.
+License:        GPL-3.0-only
 URL:            http://%{name}.net
 Source0:        https://github.com/%{name}/%{name}/archive/refs/tags/v%{version}.tar.gz
 
