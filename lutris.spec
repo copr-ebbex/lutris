@@ -25,6 +25,7 @@ BuildRequires:  webkit2gtk4.1-devel
 BuildRequires:  python3-cairo-devel
 
 
+%if 0%{?fedora} || 0%{?rhel} < 10
 %ifarch x86_64
 Requires:       mesa-dri-drivers(x86-32)
 Requires:       mesa-vulkan-drivers(x86-32)
@@ -34,6 +35,7 @@ Recommends:     pipewire(x86-32)
 Recommends:     libFAudio(x86-32)
 Recommends:     wine-pulseaudio(x86-32)
 Recommends:     wine-core(x86-32)
+%endif
 %endif
 
 Requires:       mesa-vulkan-drivers
